@@ -19,6 +19,7 @@ jobs:
           - maven
           - openjdk-8-jdk  
   - os: linux
+    dist: bionic
     arch: aarch64
     jdk: openjdk11
     script: "mvn install -DskipTests"
