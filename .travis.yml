@@ -8,6 +8,25 @@ jobs:
     jdk: openjdk8
   - os: linux
     jdk: openjdk11
+  
+  - os: linux
+    arch: aarch64
+    jdk: openjdk8
+    script: "mvn install -DskipTests"
+    addons:
+      apt:
+        packages:
+          - maven
+          - openjdk-8-jdk  
+  - os: linux
+    arch: aarch64
+    jdk: openjdk11
+    script: "mvn install -DskipTests"
+    addons:
+      apt:
+        packages:
+          - maven
+          - openjdk-11-jdk
   - build: s390x # custom job identifier to be referenced in the allow_failures section
     os: linux
     arch: s390x
